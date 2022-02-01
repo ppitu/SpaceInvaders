@@ -1,9 +1,10 @@
 #include "GameObject.h"
 
 GameObject::GameObject(SDL_Renderer* _ren, int x, int y) :
-	ren(_ren),
 	xpos(x),
-	ypos(y)
+	ypos(y),
+    ren(_ren),
+    right(true)
 {
 }
 
@@ -13,8 +14,15 @@ GameObject::~GameObject()
 
 void GameObject::Update()
 {
-	xpos++;
-	ypos++;
+
+    if(right)
+    {
+        xpos += 5;
+    }
+    else
+    {
+        ypos -= 5;
+    }
 
 	rect.x = xpos;
 	rect.y = ypos;

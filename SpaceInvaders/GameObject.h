@@ -7,7 +7,7 @@ class GameObject
 {
 public:
 
-	GameObject(SDL_Renderer* ren, int x, int y);
+	GameObject ( SDL_Renderer* _ren, int x, int y );
 	~GameObject();
 
 	void Update();
@@ -19,6 +19,8 @@ private:
 
 	SDL_Rect rect;
 	SDL_Renderer* ren;
+
+    bool right;
 };
 
 #endif

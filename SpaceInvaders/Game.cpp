@@ -5,9 +5,9 @@
 GameObject* player;
 
 Game::Game() :
-	isRunning(false),
 	window(NULL),
-	ren(NULL)
+	ren(NULL),
+	isRunning(false)
 {
 }
 
@@ -17,11 +17,6 @@ void Game::init(const char* title, int xpos, int ypos, int x, int y, int flags)
 
 	window = SDL_CreateWindow(title, xpos, ypos, x, y, flags);
 	ren = SDL_CreateRenderer(window, -1, 0);
-
-	//rect.x = 10;
-	//rect.y = 10;
-	//rect.h = 50;
-	//rect.w = 50;
 
 	player = new GameObject(ren, 0, 0);
 
